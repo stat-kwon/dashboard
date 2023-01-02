@@ -9,6 +9,7 @@ class DateRange(EmbeddedDocument):
 
 class Currency(EmbeddedDocument):
     enabled = BooleanField(default=False)
+    value = StringField(default="")
 
 
 class Settings(EmbeddedDocument):

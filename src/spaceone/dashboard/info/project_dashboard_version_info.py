@@ -57,7 +57,8 @@ def _DateRangeInfo(date_range):
 def _CurrencyInfo(currency):
     if currency:
         info = {
-            'enabled': currency.enabled
+            'enabled': currency.enabled,
+            'value': currency.value
         }
         return project_dashboard_pb2.ProjectDashboardCurrency(**info)
     else:

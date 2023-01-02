@@ -372,9 +372,11 @@ class DomainDashboardService(BaseService):
 
         if 'currency' in settings:
             settings['currency'] = {
-                'enabled': settings['currency'].get('enabled', False)
+                'enabled': settings['currency'].get('enabled', False),
+                'value': settings['currency'].get('value', '')
             }
         else:
-            settings.update({'currency': {'enabled': domain_dashboard_vo.settings.currency.enabled}})
+            settings.update({'currency': {'enabled': domain_dashboard_vo.settings.currency.enabled,
+                                          'value': domain_dashboard_vo.settings.currency.value}})
 
         return settings

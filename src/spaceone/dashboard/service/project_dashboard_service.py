@@ -376,9 +376,11 @@ class ProjectDashboardService(BaseService):
 
         if 'currency' in settings:
             settings['currency'] = {
-                'enabled': settings['currency'].get('enabled', False)
+                'enabled': settings['currency'].get('enabled', False),
+                'value': settings['currency'].get('value', '')
             }
         else:
-            settings.update({'currency': {'enabled': project_dashboard_vo.settings.currency.enabled}})
+            settings.update({'currency': {'enabled': project_dashboard_vo.settings.currency.enabled,
+                                          'value': project_dashboard_vo.settings.currency.value}})
 
         return settings
